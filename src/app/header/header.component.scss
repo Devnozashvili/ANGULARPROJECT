@@ -1,0 +1,44 @@
+
+nav {
+    height: 100%;
+    h1{
+        font-size: 25px;
+        color: #000;
+        margin: 0;
+        font-family: serif;
+    }
+    ul{
+        height: 100%;
+        display: flex;
+        gap: 20px;
+        list-style: none;
+        align-items: center;
+        li {
+        
+            a {
+                text-decoration: none;
+                color: #000;
+                font-family: fantasy;
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        h1{
+            font-size: 15px;
+        }
+        ul {
+            flex-direction: column;
+            gap: 5px;
+        }
+        li {
+            a {
+                font-size: 12px;
+            }
+        }
+    }
+    
+} 
