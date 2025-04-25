@@ -1,1 +1,14 @@
-<p>rooms works!</p>
+<div class="roomsCont">
+<div *ngFor="let el of rooms" class="room-card">
+    <img [src]="el.images[0].source" alt="Room image" class="room-image">
+    <div class="room-info">
+      <h3>{{ el.name }}</h3>
+      <p>Price per night: {{ el.pricePerNight }} GEL</p>
+      <button class="btnRooms"><a routerLink="/hotels">Book Now</a></button>
+    
+      <!-- <a [routerLink]="['/rooms']" [queryParams]="{ id: el.id }" class="book-button">Book Now</a> -->
+    </div>
+  </div>
+</div>
+
+<app-error-dialog></app-error-dialog>

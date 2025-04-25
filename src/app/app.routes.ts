@@ -7,13 +7,29 @@ import { ErrorComponent } from './error/error.component';
 
 
 export const routes: Routes = [
+
+
     { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: 'home', component: HomeComponent },
-    { path: 'rooms', component: RoomsComponent },
-    { path: 'hotels', component: HotelsComponent },
-    { path: 'bookedrooms', component: BookedroomsComponent },
+    { 
+      path : "home",
+      loadComponent: () => import('./home/home.component').then(m => m.HomeComponent)
+    },
+    {
+      path : "rooms",
+      loadComponent: () => import('./rooms/rooms.component').then(m => m.RoomsComponent)
+    },
+    {
+      path : "hotels",
+      loadComponent: () => import('./hotels/hotels.component').then(m => m.HotelsComponent)
+    },
+    {
+      path : "bookedrooms",
+      loadComponent: () => import('./bookedrooms/bookedrooms.component').then(m => m.BookedroomsComponent)
+ 
+    },
+
+     {path : "**", component: ErrorComponent }
 
 
-    {path : "**", component: ErrorComponent }
   ];
   

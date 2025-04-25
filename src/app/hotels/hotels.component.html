@@ -1,1 +1,19 @@
-<p>hotels works!</p>
+<!-- <select id="sort" [(ngModel)]="selectedCity" (change)="onCityChange(selectedCity)">
+    <option value="">Select City</option>
+    <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+  </select> -->
+
+
+
+   <div class="hotels-container">
+    <div class="hotel-card" *ngFor="let el of userArr">
+      <img [src]="el.featuredImage"  />
+      <div class="card-body">
+        <h2>{{ el.name }}</h2>
+        <p>{{ el.address }}</p>
+        <p class="city">{{ el.city }}</p>
+      </div>
+    </div>
+  </div>
+  
+  <app-error-dialog></app-error-dialog>
