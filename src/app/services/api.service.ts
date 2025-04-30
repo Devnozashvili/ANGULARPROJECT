@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { FilterRoomsModels } from '../../Models/filter-rooms-models';
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +11,8 @@ export class ApiService {
 constructor(private http: HttpClient) { }
 
 private readonly bookingUrl = 'https://hotelbooking.stepprojects.ge/api/Booking';
-getHotels() {
-  return this.http.get('https://hotelbooking.stepprojects.ge/api/Hotels/GetAll');
+getHotels()  : Observable<any[]> {
+  return this.http.get<any[]>('https://hotelbooking.stepprojects.ge/api/Hotels/GetAll');
 }
 getCities(): Observable<string[]> {
   return this.http.get<string[]>('https://hotelbooking.stepprojects.ge/api/Hotels/GetCities');
@@ -19,6 +21,10 @@ getCities(): Observable<string[]> {
 
 getRooms(): Observable<any[]> {
   return this.http.get<any[]>('https://hotelbooking.stepprojects.ge/api/Rooms/GetAll');
+}
+
+getRoomTypes(): Observable<any[]> {
+  return this.http.get<any[]>('https://hotelbooking.stepprojects.ge/api/Rooms/GetRoomTypes');
 }
 
 
@@ -32,5 +38,13 @@ deleteBooking(id: number): Observable<any> {
     responseType: 'text'
   });
 }
+
+getRoom(id: number) {
+  return this.http.get<any>(`https://hotelbooking.stepprojects.ge/api/Rooms/GetRoom/${id}`);
+}
+filterRooms(data: FilterRoomsModels ) {
+  return this.http.post('https://hotelbooking.stepprojects.ge/api/Rooms/GetFiltered', data); // შეცვალე URL
+}
+
 
 }

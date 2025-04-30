@@ -1,0 +1,51 @@
+
+<form id="bookingForm">
+    <h2> reservation</h2>
+    <div class="book-form">
+        <label for="customerName">Name and Surname:</label>
+        <input type="text" id="customerName" name="customerName" >
+
+    </div>
+    <div class="book-form">     
+       <label for="checkInDate">Check-in Date:</label>
+       <input type="date" id="checkInDate" name="checkInDate" >
+
+    </div>
+        <div class="book-form">
+            <label for="checkOutDate">Check-out Date:</label>
+            <input type="date" id="checkOutDate" name="checkOutDate" >
+
+        </div>
+        <!-- <div class="book-form">
+            <label for="totalPrice">Total Price ($):</label>
+            <input type="number" id="totalPrice" name="totalPrice" placeholder="Enter price" min="0">
+
+        </div> -->
+        <!-- <div class="book-form">
+            <label for="roomID">Room ID:</label>
+            <input type="number" id="roomID" name="roomID" placeholder="Enter Room ID" >
+
+        </div> -->
+        <!-- <div class="book-form">
+            <label for="isConfirmed">Confirmed:</label>
+            <input type="checkbox" id="isConfirmed" name="isConfirmed">
+
+        </div> -->
+        <div class="book-form">
+            <label for="customerId">Customer ID:</label>
+            <input type="number" id="customerId" name="customerId" placeholder="Enter Customer ID">
+
+        </div>
+        <div class="book-form">
+            <label for="customerPhone">Phone Number:</label>
+            <input type="tel" id="customerPhone" name="customerPhone" placeholder="Enter phone number" pattern="^\+?[0-9\s\-]{7,15}$" >
+
+        </div>
+        <input type="hidden" id="id" name="id">
+
+        
+    <button type="submit">Submit</button>
+</form>
+
+
+<app-error-dialog></app-error-dialog>

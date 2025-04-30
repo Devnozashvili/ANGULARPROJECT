@@ -27,6 +27,14 @@ export const routes: Routes = [
       loadComponent: () => import('./bookedrooms/bookedrooms.component').then(m => m.BookedroomsComponent)
  
     },
+    {
+      path : "booking",
+      loadComponent: () => import('./booking/booking.component').then(m => m.BookingComponent)
+    },
+    {
+      path : "rooms-picture",
+      loadComponent: () => import('./rooms-picture/rooms-picture.component').then(m => m.RoomsPictureComponent)
+    },
 
      {path : "**", component: ErrorComponent }
 

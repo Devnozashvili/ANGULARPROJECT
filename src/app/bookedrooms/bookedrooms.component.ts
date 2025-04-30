@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ApiService } from '../services/api.service';
 import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-bookedrooms',
@@ -30,12 +31,27 @@ export class BookedroomsComponent implements OnInit {
   deleteBooking(id: number) {
     this.apiService.deleteBooking(id).subscribe({
       next: () => {
-        alert('Booking successfully deleted');
+        Swal.fire({
+          icon: 'success',
+          title: 'Booking successfully deleted',
+          showConfirmButton: false,
+          width: '$00px',
+          padding: '20px',
+          timer: 1500
+        });
         this.fetchBookings();
       },
       error: (err) => {
         console.error('Error deleting booking:', err);
-        alert('Error deleting booking.');
+        Swal.fire({
+          icon: 'error',
+          title: 'Error deleting booking',
+          text: 'Please try again later.',
+          width: '400px',
+          padding: '20px',
+
+        
+        });
       }
     });
   }

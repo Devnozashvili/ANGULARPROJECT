@@ -1,0 +1,16 @@
+
+<div class="roomBox" *ngFor="let room of rooms">
+    <div class="room-images">
+      <div *ngFor="let image of room.images" class="room-image-wrapper">
+        <img [src]="image.source" alt="Room image" class="room-image">
+      </div>
+    </div>
+  
+    <div class="room-info">
+      <h3>{{ room.name }}</h3>
+      <p>Price per night: {{ room.pricePerNight }} GEL</p>
+      <p>Maximum Guests: {{ room.maximumGuests }}</p>
+    </div>
+  </div>
+
+  <app-error-dialog></app-error-dialog>

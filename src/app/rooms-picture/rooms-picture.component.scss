@@ -1,0 +1,31 @@
+.roomBox {
+    margin-bottom: 30px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+  
+  .room-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .room-image-wrapper {
+    width: 200px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  
+  .room-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .room-info {
+    padding-top: 10px;
+  }
+  

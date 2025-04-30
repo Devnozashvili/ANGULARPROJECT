@@ -13,11 +13,12 @@
     .room-card{
        text-align: center;
 
+
     }
     .btnRooms {
         display: inline-block;
         padding: 10px 10px;
-        background-color: #838f9d;
+        background-color: #3a5471;
         color: white;
         text-align: center;
         text-decoration: none;
@@ -42,3 +43,108 @@
   
 
 }
+
+#rooms {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+    .filterRooms {
+      display: flex;
+      justify-content: center;
+  
+      .filterRoom1 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        width: 100%;
+        max-width: 1000px;
+  
+        .filter-group {
+          display: flex;
+          flex-direction: column;
+  
+          label {
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #333;
+          }
+  
+          input,
+          select {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+          }
+  
+          input:focus,
+          select:focus {
+            border-color: #8c6c90;
+            outline: none;
+          }
+        }
+  
+        .roomTypeBtn,
+        .resetBtn {
+          padding: 0.75rem 1rem;
+          font-size: 1rem;
+          border: none;
+          border-radius: 0.5rem;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+          margin-top: 1.5rem;
+        }
+  
+        .roomTypeBtn {
+          background-color:#4e3759;
+          color: white;
+  
+          &:hover {
+            background-color: #d1aad9;
+          }
+        }
+  
+        .resetBtn {
+          background-color: #6c757d;
+          color: white;
+  
+          &:hover {
+            background-color: #5a6268;
+          }
+        }
+      }
+    }
+    .btns{
+      display: flex;
+      gap: 20px;
+    }
+  }
+  
+
+  .btns{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .filterBtn{
+    padding: 10px 20px;
+    background-color: #b79bcd;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #ccadcb;
+    }
+  }
+  .buttons{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+  }
