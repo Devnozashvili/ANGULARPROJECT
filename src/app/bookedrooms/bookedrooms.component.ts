@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ApiService } from '../services/api.service';
 import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
@@ -8,12 +8,13 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-bookedrooms',
   standalone: true,
-  imports: [CommonModule, RouterModule, ErrorDialogComponent],
+  imports: [CommonModule, RouterModule, ],
   templateUrl: './bookedrooms.component.html',
   styleUrl: './bookedrooms.component.scss'
 })
 export class BookedroomsComponent implements OnInit {
   bookings: any[] = [];
+  @ViewChild('bookingContainer') bookingContainer!: ElementRef;
 
   constructor(private apiService: ApiService) {}
 
@@ -55,4 +56,13 @@ export class BookedroomsComponent implements OnInit {
       }
     });
   }
+
+  scrollToBottomEnd(){
+    this.bookingContainer.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'end' });
+  
+  }
+  scrollToTopEnd(){
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
 }

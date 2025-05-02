@@ -42,9 +42,9 @@ deleteBooking(id: number): Observable<any> {
 getRoom(id: number) {
   return this.http.get<any>(`https://hotelbooking.stepprojects.ge/api/Rooms/GetRoom/${id}`);
 }
-filterRooms(data: FilterRoomsModels ) {
-  return this.http.post('https://hotelbooking.stepprojects.ge/api/Rooms/GetFiltered', data); // შეცვალე URL
-}
+// filterRooms(data: FilterRoomsModels ) {
+//   return this.http.post('https://hotelbooking.stepprojects.ge/api/Rooms/GetFiltered', data); 
+// }
 
 
 }

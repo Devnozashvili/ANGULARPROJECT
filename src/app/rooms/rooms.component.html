@@ -1,26 +1,21 @@
-
-<!-- ////////აქ არის ტიპების მიხედვი ფილტრაცია -->
+<!-- ღილაკებით ტიპების ფილტრაცია -->
 <div class="buttons">
   <button class="filterBtn" (click)="filterRoomsByType()">All</button>
   <button 
     *ngFor="let type of roomTypes" 
     class="filterBtn"
-    (click)=" filterRoomsByType(type.id)">
+    (click)="filterRoomsByType(type.id)">
     {{ type.name }}
   </button>
 </div>
 
-
-
-
-<!-- /////////////////ოთახების ფილტრაცია -->
-<form id="rooms" (ngSubmit)="onSubmit()" #filterForm="ngForm">
+<!-- ფორმის ფილტრი -->
+<form id="rooms" #filterForm="ngForm">
   <div class="filterRooms">
     <div class="filterRoom1">
       <div class="filter-group">
-       
         <label for="roomType">Room Type</label>
-        <select id="roomType" name="roomTypeId" required [(ngModel)]="filterData.roomTypeId">
+        <select id="roomType" name="roomTypeId" [(ngModel)]="roomType">
           <option value="0">All</option>
           <option *ngFor="let type of roomTypes" [value]="type.id">{{ type.name }}</option>
         </select>
@@ -28,47 +23,45 @@
 
       <div class="filter-group">
         <label for="priceFrom">Price From</label>
-        <input type="number" id="priceFrom" name="priceFrom" required [(ngModel)]="filterData.priceFrom">
+        <input type="number" id="priceFrom" name="priceFrom" required [(ngModel)]="priceFrom">
       </div>
 
       <div class="filter-group">
         <label for="priceTo">Price To</label>
-        <input type="number" id="priceTo" name="priceTo" required [(ngModel)]="filterData.priceTo">
+        <input type="number" id="priceTo" name="priceTo" required [(ngModel)]="priceTo">
       </div>
 
       <div class="filter-group">
         <label for="maximumGuests">Guest</label>
-        <input type="number" id="maximumGuests" name="maximumGuests" [(ngModel)]="filterData.maximumGuests">
+        <input type="number" id="maximumGuests" name="maximumGuests" [(ngModel)]="maxGuests">
       </div>
 
       <div class="filter-group">
         <label for="checkIn">Check-in</label>
-        <input type="date" id="checkIn" name="checkIn" required [(ngModel)]="filterData.checkIn">
+        <input type="date" id="checkIn" name="checkIn" required [(ngModel)]="checkIn">
       </div>
 
       <div class="filter-group">
         <label for="checkOut">Check-out</label>
-        <input type="date" id="checkOut" name="checkOut" required [(ngModel)]="filterData.checkOut">
+        <input type="date" id="checkOut" name="checkOut" required [(ngModel)]="checkOut">
       </div>
 
-      <button class="roomTypeBtn" type="submit" >Filter</button>
-      <button class="resetBtn" type="reset" (click)="reset()"> Reset</button>
+      <button class="roomTypeBtn" type="submit" (click)="filter()">Filter</button>
+      <button class="resetBtn" type="reset" (click)="reset()">Reset</button>
     </div>
   </div>
 </form>
- 
 
-  <!-- ////////ოთახების გამოტანა ხდება  -->
-
+<!-- ოთახების სია -->
 <div class="roomsCont">
-<div *ngFor="let el of rooms" class="room-card">
-    <img [src]="el.images[0].source" alt="Room image" class="room-image">
+  <div *ngFor="let el of rooms" class="room-card">
+    <img [src]="el.images[0]?.source" alt="Room image" class="room-image">
     <div class="room-info">
       <h3>{{ el.name }}</h3>
       <p>Price per night: {{ el.pricePerNight }} GEL</p>
       <div class="btns">
-        <button class="btnRooms"><a routerLink="/booking">Book Now</a></button>
-        <button class="btnRooms"><a routerLink="/rooms-picture">See More</a></button>
+        <button class="btnRooms"><a [routerLink]="'/booking/' + el.id">Book Now</a></button>
+        <button class="btnRooms"><a [routerLink]="'/rooms-picture/' + el.id">See More</a></button>
       </div>
     </div>
   </div>

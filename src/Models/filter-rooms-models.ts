@@ -1,3 +1,5 @@
+import { __exportStar } from "tslib";
+
 export interface FilterRoomsModels {
 
     roomTypeId: number;

@@ -28,11 +28,11 @@ export const routes: Routes = [
  
     },
     {
-      path : "booking",
+      path : "booking/:id",
       loadComponent: () => import('./booking/booking.component').then(m => m.BookingComponent)
     },
     {
-      path : "rooms-picture",
+      path : "rooms-picture/:id",
       loadComponent: () => import('./rooms-picture/rooms-picture.component').then(m => m.RoomsPictureComponent)
     },
 
