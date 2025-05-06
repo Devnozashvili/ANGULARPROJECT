@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
 import { BookingService } from '../services/booking.service';
 import { CommonModule } from '@angular/common';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-booking',
@@ -18,7 +19,14 @@ export class BookingComponent {
 
   onSubmit(form: NgForm) {
     if (form.invalid) {
-      alert('please fill in all required fields.');
+      Swal
+        .fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Please fill in all required fields.',
+          confirmButtonText: 'OK'
+        });
+      // alert('please fill in all required fields.');
       return;
     }
   
@@ -38,16 +46,28 @@ export class BookingComponent {
   
     this.bookingService.createBooking(bookingData).subscribe({
       next: (response) => {
-        alert("Booking successful!");
+        Swal.fire({
+          title: 'Booking Successful',
+          text: 'Your booking has been confirmed!',
+          icon: 'success',
+          confirmButtonText: 'OK'
+        });
+        // alert("Booking successful!");
         console.log("Response:", response);
+        form.reset();
       },
       error: (err) => {
         console.error("error", err);
-        alert("Booking Error " + (err.error?.message || err.message));
+        Swal.fire({
+          icon: 'error',
+          title: 'Booking Error',
+          text: err.error?.message || err.message,
+          confirmButtonText: 'OK'
+        });
+        // alert("Booking Error " + (err.error?.message || err.message));
       }
     });
   }
-
 
   
   }

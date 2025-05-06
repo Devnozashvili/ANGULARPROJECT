@@ -25,22 +25,46 @@ nav {
     }
 }
 
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: 1024px) {
     nav {
-        h1{
-            font-size: 15px;
+      h1 {
+        font-size: 22px;
+      }
+      ul {
+        gap: 16px;
+        li a {
+          font-size: 14px;
         }
-        ul {
-            flex-direction: column;
-            gap: 5px;
-        }
-        li {
-            a {
-                font-size: 12px;
-            }
-        }
+      }
     }
-    
-} 
-
-
+  }
+  
+  @media screen and (max-width: 768px) {
+    nav {
+      h1 {
+        font-size: 18px;
+      }
+      ul {
+        gap: 12px;
+        li a {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    nav {
+      h1 {
+        font-size: 16px;
+      }
+      ul {
+        gap: 10px;
+        li a {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  

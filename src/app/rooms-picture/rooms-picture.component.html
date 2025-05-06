@@ -1,14 +1,15 @@
 <div class="roomBox" *ngIf="selectedRoom">
+    <div class="room-info">
+        <h3>{{ selectedRoom.name }}</h3>
+        <p>Price per night: {{ selectedRoom.pricePerNight }} GEL</p>
+        <p>Maximum Guests: {{ selectedRoom.maximumGuests }}</p>
+      </div>
     <div class="room-images">
       <div *ngFor="let image of selectedRoom.images" class="room-image-wrapper">
         <img [src]="image.source" alt="Room image" class="room-image">
       </div>
     </div>
-    <div class="room-info">
-      <h3>{{ selectedRoom.name }}</h3>
-      <p>Price per night: {{ selectedRoom.pricePerNight }} GEL</p>
-      <p>Maximum Guests: {{ selectedRoom.maximumGuests }}</p>
-    </div>
+   
   </div>
 
   <app-error-dialog></app-error-dialog>

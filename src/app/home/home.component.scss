@@ -4,3 +4,131 @@ img{
     width: 100%;
    
 }
+
+.stars {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 30px;
+  
+    a {
+      color: #e21847; 
+      transition: color 0.3s ease;
+      
+     
+  
+      i {
+        font-size: 30px;
+      }
+    }
+  }
+  
+
+  .line-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 20px;
+  
+    h3 {
+      font-size: 30px;
+      color: #832b2b; 
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  
+    .line {
+      flex-grow: 1;
+      height: 2px;
+      background-color: #e38181; 
+      min-width: 50px;
+      border-radius: 5px;
+    }
+  
+    .first-line,
+    .second-line {
+      flex-grow: 0.5;
+      margin: 0 5%;
+    }
+
+    @media (max-width: 600px) {
+      flex-wrap: wrap;
+      gap: 10px;
+  
+      .line {
+        flex-grow: 1;
+      }
+  
+      .first-line {
+        margin-left: 0;
+      }
+  
+      h3 {
+        font-size: 20px;
+        text-align: center;
+      }
+    }
+  }
+  
+
+  .uspCont {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 20px;
+  
+    .usp {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      text-align: center;
+      max-width: 250px;
+  
+      a {
+        color: #832b2b; 
+        font-size: 30px;
+        transition: color 0.3s ease;
+  
+        &:hover {
+          color: #ffd700; 
+        }
+  
+        i {
+          margin-bottom: 20px;
+        }
+      }
+  
+      h2 {
+        font-size: 20px;
+        color: #832b2b; 
+        margin-bottom: 20px;
+      }
+  
+      p {
+        font-size: 16px;
+        color: #333;
+        line-height: 1.5;
+        text-align: center;
+        margin: 0;
+      }
+    }
+  
+
+    @media (max-width: 768px) {
+      .usp {
+        max-width: 100%;
+      }
+    }
+  
+    @media (max-width: 600px) {
+      .usp {
+        max-width: 100%;
+        padding: 20px;
+      }
+    }
+  }
