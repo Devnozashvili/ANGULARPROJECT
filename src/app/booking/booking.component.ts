@@ -5,6 +5,7 @@ import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
 import { BookingService } from '../services/booking.service';
 import { CommonModule } from '@angular/common';
 import Swal from 'sweetalert2';
+import { Bookingmodel } from '../../Models/bookingmodel';
 
 @Component({
   selector: 'app-booking',
@@ -32,15 +33,14 @@ export class BookingComponent {
   
     const formData = form.value;
   
-    const bookingData = {
-     
-      roomID: 1, 
+    const bookingData: Bookingmodel = {
+      roomID: 1,
       checkInDate: new Date(formData.checkInDate).toISOString(),
       checkOutDate: new Date(formData.checkOutDate).toISOString(),
-      totalPrice: 200, 
+      totalPrice: 200,
       isConfirmed: true,
       customerName: formData.customerName,
-      customerId: "123", 
+      customerId: "123",
       customerPhone: formData.customerPhone
     };
   
